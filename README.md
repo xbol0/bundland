@@ -50,6 +50,12 @@ Example:
 curl -d 'console.log(123)' http://your.domain/module@tag
 ```
 
+打包发布：
+
+```shell
+deno bundle entry.ts | curl -T - -X POST http://your.domain/module@tag
+```
+
 ### 获取模块
 
 #### GET /modname[@tag]
