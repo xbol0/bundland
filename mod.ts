@@ -18,7 +18,7 @@ export function main() {
   serveCallback(+port, handler);
   console.log(`[${new Date().toUTCString()}] Port = ${port}`);
 
-  async function handler(req: Deno.RequestEvent["request"]) {
+  async function handler(req: Request) {
     try {
       if (token) {
         const auth = req.headers.get("authorization");
@@ -32,12 +32,11 @@ export function main() {
 
     // Replace default domain's base path.
     const uri = new URL(req.url);
-    const pathname = req.headers.has("x-fc-base-path")
-      ? uri.pathname.replace(req.headers.get("x-fc-base-path") || "", "")
-      : uri.pathname;
+    const prefix = req.headers.get("x-fc-base-path") || "";
+    const pathname = uri.pathname.replace(prefix, "");
 
     // Publish a product
-    if (req.method === "POST") {
+    if (req.method === "POST" || req.method === "PUT") {
       if (!pathname.match(/^\/\w+\@\w+$/)) {
         return new Response("Invalid path", { status: 400 });
       }
