@@ -1,4 +1,4 @@
-import { OSSBucket } from "https://crux.land/3SKXQZ";
+import { OSSBucket } from "https://crux.land/ali-oss@main";
 import { serveCallback } from "https://crux.land/serve_callback@beta";
 import { assert } from "https://deno.land/std@0.122.0/testing/asserts.ts";
 import { readableStreamFromReader } from "https://deno.land/std@0.122.0/streams/conversion.ts";
