@@ -7,8 +7,13 @@ Deno 私有打包模块服务，适配阿里云FC + OSS
 ## Curx.land
 
 ```
-https://crux.land/2E4o6E
+https://crux.land/bundland@1.0.2
 ```
+
+Tag aliases:
+
+1.0.2 -> RjHUN (latest)
+main -> 2E4o6E
 
 ## Usage
 
