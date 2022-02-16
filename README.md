@@ -42,7 +42,7 @@ TOKEN=
 
 ### 发布一个模块
 
-#### POST /modname@tag
+#### POST/PUT /modname@tag
 
 Example:
 
@@ -53,7 +53,7 @@ curl -d 'console.log(123)' http://your.domain/module@tag
 打包发布：
 
 ```shell
-deno bundle entry.ts | curl -T - -X POST http://your.domain/module@tag
+deno bundle entry.ts | curl -T - http://your.domain/module@tag
 ```
 
 ### 获取模块
